@@ -24,7 +24,7 @@ if (!JWT_SECRET) {
 console.log("JWT_SECRET loaded.");
 
 // --- MongoDB Connection ---
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/diary_stationery_db';
+const mongoURI = process.env.MONGO_URI || 'mongodb+srv://AbhiTech:90688851@cluster0.nihpksr.mongodb.net/diary_stationery_db';
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB Connected Successfully!'))
   .catch(err => {
