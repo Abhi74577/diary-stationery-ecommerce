@@ -34,7 +34,7 @@ const getProductImageUrl = (productInstance) => {
   if (productInstance && productInstance.imageUrls && productInstance.imageUrls.length > 0 && productInstance.imageUrls[0]) {
     const imgUrl = productInstance.imageUrls[0];
     // Check if it's a local path or an external URL
-    return imgUrl.startsWith('/uploads/') ? `http://localhost:5000${imgUrl}` : imgUrl;
+    return imgUrl.startsWith('/uploads/') ? `https://diary-stationery-ecommerce.onrender.com${imgUrl}` : imgUrl;
   }
   return `${placeholderBase}${encodeURIComponent(productInstance.name || 'Stationery')}`;
 };

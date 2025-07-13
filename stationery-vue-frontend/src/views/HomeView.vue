@@ -96,7 +96,7 @@ const fetchFeaturedProducts = async () => {
   try {
     loading.value = true;
     error.value = null;
-    const response = await axios.get('http://localhost:5000/api/products');
+    const response = await axios.get('https://diary-stationery-ecommerce.onrender.com/api/products');
     featuredProducts.value = response.data.slice(0, 4); // Show first 4 as featured
   } catch (err) {
     console.error('Failed to fetch featured products:', err);

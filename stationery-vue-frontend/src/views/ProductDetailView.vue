@@ -69,7 +69,7 @@ const fetchProductDetails = async () => {
   isLoading.value = true;
   error.value = '';
   try {
-    const response = await axios.get(`http://localhost:5000/api/products/${productId.value}`);
+    const response = await axios.get(`https://diary-stationery-ecommerce.onrender.com/api/products/${productId.value}`);
     product.value = response.data;
     if (product.value && product.value.quantity === 0) {
       selectedQuantity.value = 0; 
@@ -106,7 +106,7 @@ const getProductImageUrl = (prod, isMainImage = false) => {
   const placeholderBase = `https://placehold.co/${size}/e0e7ff/3730a3?text=`;
   if (prod && prod.imageUrls && prod.imageUrls.length > 0 && prod.imageUrls[0]) {
     const imgUrl = prod.imageUrls[0];
-    return imgUrl.startsWith('/uploads/') ? `http://localhost:5000${imgUrl}` : imgUrl;
+    return imgUrl.startsWith('/uploads/') ? `https://diary-stationery-ecommerce.onrender.com${imgUrl}` : imgUrl;
   }
   return `${placeholderBase}${encodeURIComponent(prod ? prod.name || 'Product' : 'Product')}`;
 };

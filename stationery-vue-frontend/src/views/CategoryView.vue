@@ -55,7 +55,7 @@ const fetchProductsByCategory = async (catName) => {
     const apiCategoryName = catName.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     console.log(`Fetching products for category (API param): ${apiCategoryName}`);
-    const response = await axios.get(`http://localhost:5000/api/products?category=${encodeURIComponent(apiCategoryName)}`);
+    const response = await axios.get(`https://diary-stationery-ecommerce.onrender.com/api/products?category=${encodeURIComponent(apiCategoryName)}`);
     products.value = response.data;
   } catch (err) {
     console.error(`Failed to fetch products for category ${catName}:`, err);

@@ -70,7 +70,7 @@ const fetchAllProducts = async () => {
   try {
     loading.value = true;
     error.value = null;
-    const response = await axios.get('http://localhost:5000/api/products');
+    const response = await axios.get('https://diary-stationery-ecommerce.onrender.com/api/products');
     allProducts.value = response.data;
   } catch (err) {
     console.error('Failed to fetch all products:', err);

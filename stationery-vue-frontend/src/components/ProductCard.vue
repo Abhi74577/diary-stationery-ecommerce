@@ -46,7 +46,7 @@ const getProductImageUrl = (productInstance) => {
     const imageUrl = productInstance.imageUrls[0];
     // Check if it's a local path (starts with /uploads/) or a full external URL
     if (imageUrl.startsWith('/uploads/')) {
-      return `http://localhost:5000${imageUrl}`; // Prepend backend URL for local images
+      return `https://diary-stationery-ecommerce.onrender.com${imageUrl}`; // Prepend backend URL for local images
     }
     return imageUrl; // Assume it's a full external URL (e.g., Google Drive direct link)
   }

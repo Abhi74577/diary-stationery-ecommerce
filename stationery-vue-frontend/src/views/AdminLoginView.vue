@@ -39,7 +39,7 @@ const handleLogin = async () => {
 
   try {
     // Make sure your backend server is running and accessible on port 5000
-    const response = await axios.post('http://localhost:5000/api/admin/login', {
+    const response = await axios.post('https://diary-stationery-ecommerce.onrender.com/api/admin/login', {
       email: email.value,
       password: password.value,
     });

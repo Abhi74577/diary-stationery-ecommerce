@@ -75,7 +75,7 @@
           </div>
           <div v-else-if="editingProduct && formState.currentImageUrl" class="image-preview-container">
             <p>Current image:</p>
-            <img :src="formState.currentImageUrl.startsWith('http') ? formState.currentImageUrl : `http://localhost:5000${formState.currentImageUrl}`"
+            <img :src="formState.currentImageUrl.startsWith('http') ? formState.currentImageUrl : `https://diary-stationery-ecommerce.onrender.com${formState.currentImageUrl}`"
                  alt="Current product image"
                  class="image-preview"
                  @error="imagePreviewError = true"/>
@@ -117,7 +117,7 @@
           <tr v-for="product in products" :key="product._id">
             <td class="td-image">
               <img v-if="product.imageUrls && product.imageUrls.length > 0 && product.imageUrls[0]"
-                   :src="product.imageUrls[0].startsWith('http') ? product.imageUrls[0] : `http://localhost:5000${product.imageUrls[0]}`"
+                   :src="product.imageUrls[0].startsWith('http') ? product.imageUrls[0] : `https://diary-stationery-ecommerce.onrender.com${product.imageUrls[0]}`"
                    :alt="product.name"
                    class="table-product-image"
                    @error="($event) => { $event.target.style.display='none'; let span = $event.target.nextElementSibling; if(span) span.style.display='inline'; }" />
@@ -179,7 +179,7 @@ const initialFormState = {
 const formState = reactive({ ...initialFormState });
 const imagePreviewUrl = ref('');
 
-const apiBaseUrl = 'http://localhost:5000/api';
+const apiBaseUrl = 'https://diary-stationery-ecommerce.onrender.com/api';
 
 watch(() => formState.externalImageUrl, (newVal) => {
     imagePreviewError.value = false;
